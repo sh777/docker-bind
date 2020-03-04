@@ -20,7 +20,7 @@ options {
     // zone-statistics yes; 
     
     // If you want to allow only specific hosts to use the DNS server:
-    allow-query { 127.0.0.1; };
+    allow-query { any; };
     
     // Specify a list of IPs/masks to allow zone transfers to here.
     //
@@ -29,7 +29,7 @@ options {
     //
     // Warning: Removing this block will cause BIND to revert to its default
     //          behaviour of allowing zone transfers to any host (!).
-    allow-transfer { none; };
+    allow-transfer { any; };
     
     
     // If there is a firewall between you and nameservers you want
@@ -60,7 +60,7 @@ options {
     // NOTE: Commented out because specified in each zone/view
     // allow-recursion { clients; servers; lan; };
     //allow-recursion { none; };
-    allow-recursion { 127.0.0.1; };
+    allow-recursion { any; };
     
     // If your ISP provided one or more IP addresses for stable 
     // nameservers, you probably want to use them as forwarders.  
@@ -68,8 +68,8 @@ options {
     // the all-0's placeholder.
     
     forwarders {
-        8.8.8.8;
-    	8.8.4.4;
+        202.96.199.133;
+    	202.96.209.133;
     };
     
     // FORWARD - Recommended for caching servers
