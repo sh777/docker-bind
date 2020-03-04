@@ -79,7 +79,7 @@ options {
     // first: Query "forwarders" first, then resolve request ourself
     // only : Only query the "forwarders" to resolve requests
     //
-    forward first;
+    forward only;
     
     
     // NOTIFY - Relevant to authoritative servers
@@ -102,4 +102,26 @@ options {
     dnssec-validation auto;
     
     auth-nxdomain no;    # conform to RFC1035
+};
+
+// Adding special forwarding zone
+
+zone "ca2.s.tl88.net"
+{
+        type stub;
+        masters {
+                221.194.158.178;
+                221.194.158.218;
+                221.194.158.157;
+                221.194.158.202;
+                27.155.111.238;
+                27.155.111.246;
+                27.155.111.238;
+                27.155.109.142;
+                27.148.140.5;
+                27.148.140.7;
+                122.224.10.63;
+                122.224.10.181;
+        };
+        forwarders {};
 };
