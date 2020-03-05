@@ -110,7 +110,7 @@ zone "ca2.s.tl88.net"
 {
     type forward;
     forward only;
-    masters {
+    forwarders {
         221.194.158.178;
         221.194.158.218;
         221.194.158.157;
